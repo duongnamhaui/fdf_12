@@ -19,5 +19,8 @@
     "sweetalert": "^1.1.3",
     "owl.carousel": "^2.2.1",
     "ion.rangeSlider": "2.2.0"
+  },
+  "resolutions": {
+    "sweetalert": "^1.1.3"
   }
 }
