@@ -1,6 +1,6 @@
 namespace :fdf_db do
   task create_all: [:create_user, :create_admin, :create_shop, :create_category,
-    :create_coupon, :create_product, :create_domain, :create_user_domain] do
+    :create_coupon, :create_product, :create_domain, :create_user_domain, :create_post] do
   end
   task create_user: :environment do
     User.create!(
@@ -3282,6 +3282,135 @@ namespace :fdf_db do
       end_hour: "15:00:00",
       image: File.open(Rails.root + "public/images/traxanhyakultdam.jpg")
     )
+  end
 
+  task create_post: :environment do
+    Post.create!(
+      user_id: 1, 
+      category_id: 2, 
+      title: "Bán cơm hộp freeship công sở", 
+      content: "Chúng tôi cung cấp cơm hộp với thực phẩm sạch đảm bảo VSATTP. Liên hệ SDT: 000000000",\
+      link_shop: "shop goes here",
+      arena: 0, 
+      mode: 0, 
+      min_price: 25_000, 
+      max_price: 35_000, 
+      status: 0, 
+    )
+
+    Post.create!(
+      user_id: 1,
+      category_id: 1,
+      title: "Bán khô gà, khô lợn ngon tuyệt hảo",
+      content: "Chúng tôi cung cấp khô gà, khô lợn kèm nước chấm bột ớt cay xè ngũ vị. Liên hệ xxx",
+      link_shop: "shop goes here",
+      arena: 0,
+      mode: 0,
+      min_price: 150_000,
+      max_price: 250_000,
+      status: 1,
+    )
+
+    Post.create!(
+      user_id: 2,
+      category_id: 2,
+      title: "Lẩu ship tận nhà",
+      content: "Lẩu ship tận nhà với đầy đủ các loại lẩu phong phú, đa dạng, hấp dẫn. Liên hệ: xxx",
+      link_shop: nil,
+      arena: 1,
+      mode: 0,
+      min_price: 200_000,
+      max_price: 1_000_000,
+      status: 0,
+    )
+
+    Post.create!(
+      user_id: 3,
+      category_id: 7,
+      title: "Bán bún thịt nướng/ chả nướng freeship nội thành",
+      content: "Bán bún thịt nướng/ chả nướng freeship nội thành, Bán bún thịt nướng/ chả nướng \
+        freeship nội thành, Bán bún thịt nướng chả nướng freeship nội thành, Bán bún thịt nướng \
+        chả nướng freeship nội thành Bán bún thịt nướng chả nướng freeship nội thành",
+      link_shop: nil,
+      arena: 1,
+      mode: 0,
+      min_price: 15_000,
+      max_price: 35_000,
+      status: 1,
+    )
+
+    Post.create!(
+      user_id: 5,
+      category_id: 2, 
+      title: "Chúng tôi chuyên thu mua chim cút số lượng lớn phục",
+      content: "Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị.\ 
+        Liên hệ: yy Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị.\
+        Liên hệ: yy,Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị.",
+      link_shop: nil,
+      arena: 0,
+      mode: 1,
+      min_price: 50_000,
+      max_price: 100_000,
+      status: 1,
+    )
+
+    Post.create!(
+      user_id: 4,
+      category_id: 8, 
+      title: "Bán nước hoa quả tươi ngon",
+      content: "Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon,\
+        Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon", 
+      link_shop: nil,
+      arena: 0,
+      mode: 0,
+      min_price: 20_000,
+      max_price: 30_000,
+      status: 2,
+    )
+
+    Post.create!(
+      user_id: 4,
+      category_id: 2,
+      title: "Chúng tôi chuyên thu mua chim cút số lượng lớn phục",
+      content: "Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị. Liên hệ: yy\
+        Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị. Liên hệ: yy\
+        Chúng tôi chuyên thu mua chim cút số lượng lớn phục vụ lễ tiệc, hội nghị. Liên hệ: yy",
+      link_shop: nil,
+      arena: 0,
+      mode: 1,
+      min_price: 50_000,
+      max_price: 100_000,
+      status: 1,
+    )
+
+    Post.create!(
+      user_id: 7,
+      category_id: 8, 
+      title: "Bán nước hoa quả tươi ngon",
+      content: "Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon, \ 
+        Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon, Bán nước hoa quả tươi ngon",
+      link_shop: nil,
+      arena: 1,
+      mode: 0,
+      min_price: 50_000,
+      max_price: 80_000,
+      status: 2,
+    )
+    
+    Post.create!(
+      user_id: 6,
+      category_id: 2, 
+      title: "Chúng tôi chuyên thu mua gà đồi",
+      content: "Chúng tôi cần tìm nhà cung cấp gà đồi loại 1 phục vụ lễ tiệc tại nhà hàng,\ 
+        Chúng tôi cần tìm nhà cung cấp gà đồi loại 1 phục vụ lễ tiệc tại nhà hàng.\
+        Chúng tôi cần tìm nhà cung cấp gà đồi loại 1 phục vụ lễ tiệc tại nhà hàng.",
+      link_shop: nil,
+      arena: 0,
+      mode: 1,
+      min_price: 50_000,
+      max_price: 100_000,
+      status: 1,
+    )
+    
   end
 end
